@@ -1,0 +1,23 @@
+[
+	{
+		"name": "INSTANCE_TITLE",
+		"label": "Service name",
+		"type": "text",
+		"description": "The title for the new service",
+		"default": "RStudio"
+	},
+	{
+		"name": "INSTANCE_PORT_1",
+		"label": "Port number 1",
+		"type": "number",
+		"description": "The port number for the admin portal",
+		"default": 8098
+	},
+	{
+		"name": "INSTANCE_PORT_2",
+		"label": "Port number 2",
+		"type": "number",
+		"description": "The port number for the RStudio server",
+		"default": 8099
+	}
+]
