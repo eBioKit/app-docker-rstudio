@@ -19,5 +19,17 @@
 		"type": "number",
 		"description": "The port number for the RStudio server",
 		"default": 8099
+	},
+	{
+		"name": "ADMIN_USER",
+		"label": "Admin account:",
+		"type": "text",
+		"description": "The admin account used for administrate your RStudio server."
+	},
+	{
+		"name": "ADMIN_PASS",
+		"label": "Admin password:",
+		"type": "password",
+		"description": "The password for the admin account."
 	}
 ]

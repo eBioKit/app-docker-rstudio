@@ -3,16 +3,16 @@
 # This is a template, the following values must be replaced:
 #   - $${INSTANCE_NAME}, name for the instance
 #   - $${INSTANCE_PORT_1}, port number 1 for the instance (nginx)
-#   - $${INSTANCE_PORT_1}, port number 2 for the instance (RStudio)
-# TODO:
-# - Enable Shiny server?
+#   - $${INSTANCE_PORT_2}, port number 2 for the instance (RStudio)
+#   - $${ADMIN_USER}, name for admin user
+#   - $${ADMIN_PASS}, password for admin user
 ############################################################
 
 version: '2'
 services:
 
     $${INSTANCE_NAME}-rstudio:
-      image: ebiokit/rstudio:0.1
+      image: fikipollo/rstudio:0.9
       container_name: $${INSTANCE_NAME}-rstudio
       depends_on:
         - $${INSTANCE_NAME}-data
@@ -21,9 +21,12 @@ services:
       ports:
         - "$${INSTANCE_PORT_1}:80"
         - "$${INSTANCE_PORT_2}:8787"
+      environment:
+        - ADMIN_USER=$${ADMIN_USER}
+        - ADMIN_PASS=$${ADMIN_PASS}
 
     $${INSTANCE_NAME}-data:
       image: busybox
       container_name: $${INSTANCE_NAME}-data
       volumes:
-        - /data/common-data/$${INSTANCE_NAME}-data/db:/home/rstudio
+        - /data/common-data/$${INSTANCE_NAME}-data/:/home

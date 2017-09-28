@@ -1,9 +1,9 @@
 {
 	"service":"rstudio",
-	"version":"0.1",
+	"version":"0.9",
 	"title":"RStudio",
 	"description":"RStudio – Open source and enterprise-ready professional software for R.",
 	"categories":"analysis,statistics,bioinformatics,web-based",
 	"website":"https://www.rstudio.com/",
-	"dockers" : "ebiokit/rstudio:0.1,busybox"
+	"dockers" : "fikipollo/rstudio:0.1,busybox"
 }
